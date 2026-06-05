@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BloomBasket 🌸</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>🌸</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">🌸 BloomBasket</div>
+    <div class="nav-right">
+      <input type="text" id="searchInput" placeholder="Search bouquets..." autocomplete="off"/>
+      <button class="cart-btn" onclick="toggleCart()">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-text">
+      <span class="hero-badge">🌸 Free delivery on orders above ₹999</span>
+      <h1>Fresh Blooms,<br/><em>Delivered with Love</em></h1>
+      <p>Handpicked bouquets for every occasion</p>
+      <div class="hero-stats">
+        <div class="stat"><strong>500+</strong><span>Bouquets</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>4.9★</strong><span>Rated</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>10K+</strong><span>Happy Customers</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTROLS -->
+  <section class="controls">
+    <div class="filters">
+      <button class="filter-btn active" data-category="All">All</button>
+      <button class="filter-btn" data-category="Birthday">🎂 Birthday</button>
+      <button class="filter-btn" data-category="Wedding">💍 Wedding</button>
+      <button class="filter-btn" data-category="Anniversary">🥂 Anniversary</button>
+      <button class="filter-btn" data-category="Valentine">❤️ Valentine</button>
+    </div>
+    <div class="sort-wrap">
+      <select id="sortSelect">
+        <option value="default">Sort by</option>
+        <option value="low">Price: Low → High</option>
+        <option value="high">Price: High → Low</option>
+        <option value="rating">Top Rated</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <main>
+    <div id="productContainer" class="products"></div>
+  </main>
+
+  <!-- CART PANEL -->
+  <div id="cartOverlay" class="cart-overlay hidden" onclick="toggleCart()"></div>
+  <aside id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h3>🛒 Your Cart</h3>
+      <button class="close-btn" onclick="toggleCart()">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <strong>₹<span id="cartTotal">0</span></strong>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="modal-overlay hidden">
+    <div class="modal">
+      <h2>🌸 Order Summary</h2>
+      <div id="modalItems" class="modal-items"></div>
+      <hr/>
+      <div class="modal-total">Total: <strong>₹<span id="modalTotal">0</span></strong></div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-confirm" onclick="confirmOrder()">Confirm Order ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">🌸 BloomBasket</div>
+        <p>Bringing freshness and joy to every doorstep. Handpicked with love, delivered with care.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Birthday Bouquets</a></li>
+          <li><a href="#">Wedding Flowers</a></li>
+          <li><a href="#">Anniversary Gifts</a></li>
+          <li><a href="#">Valentine Special</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Care Tips</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">📍 Hyderabad, India</a></li>
+          <li><a href="#">📞 +91 99889 98899</a></li>
+          <li><a href="#">✉️ hello@bloombasket.in</a></li>
+          <li><a href="#">⏰ 9 AM – 9 PM Daily</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 BloomBasket. Made with ❤️ </p>
+      <p class="footer-tagline">🌸 Every bloom tells a story</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
