@@ -2,8 +2,7 @@
 
 > A responsive flower shop web app to browse, filter, wishlist, and order bouquets — built with vanilla HTML, CSS & JavaScript.
 
-![BloomBasket Preview](./preview.png)
-
+![BloomBasket Preview](./screenshots/preview.png)
 ---
 
 ## 🔗 Live Demo
